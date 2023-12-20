@@ -104,9 +104,13 @@ function Footer() {
   );
 }
 
-function Button() {
-  return <button className="add-to-cart-button">Add to Cart</button>;
+function Button(props) {
+  return <button className={props.buttonStyle}>{props.buttonText}</button>;
 }
+Button.propTypes = {
+  buttonText: PropTypes.string.isRequired,
+  buttonStyle: PropTypes.string.isRequired,
+};
 
 function App() {
   return (
